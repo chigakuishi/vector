@@ -8,7 +8,10 @@ use Encode;
 `mkdir /tmp/vector`;
 our $dlpath = "/tmp/vector/";
 our $host = "http://www.vector.co.jp";
-my  $url = "/vpack/filearea/winnt/hardware/av";
+#my  $url = "/vpack/filearea/winnt/hardware/av";
+my $url=<STDIN>;
+chomp $url;
+$url=$1 if($url=~/https?:\/\/[^\/]+(\/.*)$/);
 sub dlpage{
   my $path = shift;
   my $name = shift;
